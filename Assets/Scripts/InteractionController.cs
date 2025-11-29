@@ -27,7 +27,6 @@ public class InteractionController: MonoBehaviour
     
     public void Interact()
     {
-        Debug.Log("Interact method called");
         currentInteractable?.Interact();
     }
 
@@ -69,13 +68,8 @@ public class InteractionController: MonoBehaviour
     
     private void UpdateInteractionInput()
     {
-        // add null checks for Keyboard.current and Gamepad.current
-        
-        // var eKey = Keyboard.current?.eKey.wasPressedThisFrame ?? false;
-        // var yButton = Gamepad.current?.yButton.wasPressedThisFrame ?? false;
         if (interactAction.WasPressedThisFrame())
         {
-            Debug.Log("Interact key was pressed this frame");
             Interact();
         }
     }
