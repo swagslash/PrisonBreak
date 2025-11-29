@@ -14,6 +14,14 @@ public class InteractionController: MonoBehaviour
 
     private IInteractable currentInteractable;
 
+    public void Start()
+    {
+        if (playerCamera == null)
+        {
+            playerCamera = Camera.main;
+        }
+    }
+    
     public void Interact()
     {
         Debug.Log("Interact method called");
