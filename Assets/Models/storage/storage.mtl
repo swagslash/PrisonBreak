@@ -1,0 +1,17 @@
+# Created by Kenney (www.kenney.nl)
+
+newmtl stone(Clone)
+Kd 0.973 1 1
+
+newmtl stoneDark(Clone)
+Kd 0.259 0.259 0.259
+
+newmtl wood(Clone)
+Kd 0.5448276 0.5448276 0.5448276
+
+newmtl woodDark(Clone)
+Kd 0.678 0.456 0.299
+
+newmtl custom4(Clone)
+Kd 0.775862 0.6344557 0.5060737
+

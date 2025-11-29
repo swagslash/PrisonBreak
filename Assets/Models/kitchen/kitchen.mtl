@@ -1,0 +1,35 @@
+# Created by Kenney (www.kenney.nl)
+
+newmtl stone(Clone)
+Kd 0.973 1 1
+
+newmtl stoneDark(Clone)
+Kd 0.293 0.293 0.293
+
+newmtl metal(Clone)
+Kd 0.741 0.823 0.84
+
+newmtl wood(Clone)
+Kd 0.896 0.602 0.393
+
+newmtl woodDark(Clone)
+Kd 0.698 0.316 0.194
+
+newmtl metalDark(Clone)
+Kd 0.306 0.388 0.388
+
+newmtl metalLight(Clone)
+Kd 0.937 0.98 0.957
+
+newmtl _defaultMat(Clone)
+Kd 1 1 1
+
+newmtl metalMedium(Clone)
+Kd 0.369 0.467 0.467
+
+newmtl carpetWhite(Clone)
+Kd 0.973 1 1
+
+newmtl glass(Clone)
+Kd 1 1 1
+

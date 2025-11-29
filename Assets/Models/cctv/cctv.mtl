@@ -1,0 +1,33 @@
+# Created by Kenney (www.kenney.nl)
+
+newmtl carpetWhite(Clone)
+Kd 0.973 1 1
+
+newmtl custom17(Clone)
+Kd 0.314 0.314 0.314
+
+newmtl custom2(Clone)
+Kd 0.372 0.348 0.33
+
+newmtl metal(Clone)
+Kd 0.741 0.823 0.84
+
+newmtl metalMedium(Clone)
+Kd 0.369 0.467 0.467
+
+newmtl stoneDark(Clone)
+Kd 0.403 0.39 0.594
+
+newmtl lamp(Clone)
+Kd 0.562 0.562 0.562
+map_Kd Textures/lamp(Clone).png
+
+newmtl metalDark(Clone)
+Kd 0.306 0.388 0.388
+
+newmtl glass(Clone)
+Kd 1 1 1
+
+newmtl carpetBlue(Clone)
+Kd 0.356 0.517 0.868
+

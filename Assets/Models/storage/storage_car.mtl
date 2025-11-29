@@ -1,0 +1,32 @@
+# Created by Kenney (www.kenney.nl)
+
+newmtl glass(Clone)
+Kd 1 1 1
+
+newmtl metalGreen(Clone)
+Kd 0 0.329412 0.7137255
+
+newmtl dark(Clone)
+Kd 0.2235294 0.2352941 0.2745098
+
+newmtl _defaultMat(Clone)
+Kd 0.9386792 0.9533962 1
+
+newmtl metal(Clone)
+Kd 0.5803922 0.5686275 0.7686275
+
+newmtl metalLight(Clone)
+Kd 0.6980392 0.6862745 0.8666667
+
+newmtl lightRed(Clone)
+Kd 0.9960784 0.2588235 0.2588235
+
+newmtl lightBlue(Clone)
+Kd 0.3607843 0.5215687 0.9764706
+
+newmtl wood(Clone)
+Kd 0.8962265 0.6015712 0.3931559
+
+newmtl woodDark(Clone)
+Kd 0.678 0.4559477 0.2990306
+
