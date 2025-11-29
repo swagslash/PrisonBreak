@@ -13,47 +13,17 @@ public class InteractionController: MonoBehaviour
     [SerializeField] float interactionDistance = 3f;
 
     private IInteractable currentInteractable;
-    private InputAction interactAction;
-    InputAction moveAction;
-    InputAction jumpAction;
-
 
     public void Interact()
     {
-        if (currentInteractable != null)
-        {
-            currentInteractable.Interact();
-        }
-    }
-    
-    private void Start()
-    {
-        Debug.Log("Interaction controller initialized!");
-        moveAction = InputSystem.actions.FindAction("Move");
-        jumpAction = InputSystem.actions.FindAction("Jump");
-        interactAction = InputSystem.actions.FindAction("Interact");
-        // Debug.Log("Interact action found: " + (interactAction != null));
+        Debug.Log("Interact method called");
+        currentInteractable?.Interact();
     }
 
     private void Update()
     {
-        // Debug.Log("Interact action state: " + interactAction.IsPressed());
-        Vector2 moveValue = moveAction.ReadValue<Vector2>();
-
-        if (interactAction.IsPressed())
-        {
-            // your jump code here
-            Debug.Log("Interact pressed");
-            // Interact();
-        }
-
-        if (jumpAction.IsPressed())
-        {
-            Debug.Log("Jump pressed");
-        }
-        
-        // UpdateCurrectInteractable();
-        // UpdateInteractionInput();
+        UpdateCurrectInteractable();
+        UpdateInteractionInput();
     }
 
     private void UpdateCurrectInteractable()
@@ -68,32 +38,34 @@ public class InteractionController: MonoBehaviour
             {
                 currentInteractable = interactable;
                 interactionText.text = interactable.InteractionMessage;
-                // interactionText.gameObject.SetActive(true);
+                interactionText.gameObject.SetActive(true);
                 return;
             }
         }
 
         currentInteractable = null;
-        // interactionText.gameObject.SetActive(false);
+        interactionText.gameObject.SetActive(false);
     }
     
-    // private void OnDrawGizmos()
-    // {
-    //     if (playerCamera == null) return;
-    //
-    //     Gizmos.color = Color.red;
-    //     Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-    //     Gizmos.DrawRay(ray.origin, ray.direction * interactionDistance);
-    // }
+    private void OnDrawGizmos()
+    {
+        if (playerCamera == null) return;
+    
+        Gizmos.color = Color.red;
+        Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+        Gizmos.DrawRay(ray.origin, ray.direction * interactionDistance);
+    }
     
     private void UpdateInteractionInput()
     {
-        Debug.Log("Interact action state: " + interactAction.ReadValue<float>());
-        if (interactAction.IsPressed())
+        // add null checks for Keyboard.current and Gamepad.current
+        
+        var eKey = Keyboard.current?.eKey.wasPressedThisFrame ?? false;
+        var yButton = Gamepad.current?.yButton.wasPressedThisFrame ?? false;
+        if (eKey || yButton)
         {
-            // your jump code here
-            Debug.Log("Interact pressed");
-            // Interact();
+            Debug.Log("Interact key was pressed this frame");
+            Interact();
         }
     }
 }
