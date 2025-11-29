@@ -14,30 +14,55 @@ public class PlayerController : MonoBehaviour
 
     private float rotationX = 0;
     private float lookXLimit = 45.0f;
-    
+
+    private PlayerInput playerInput;
+    private InputAction moveAction;
+    private InputAction lookAction;
+    private Vector2 moveInput;
+    private Vector2 lookInput;
+
+    [SerializeField] private Camera playerCamera; // Assign in inspector or via code
 
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
+        playerInput = GetComponent<PlayerInput>();
+        if (playerCamera == null)
+            playerCamera = Camera.main;
+        if (playerInput == null)
+        {
+            Debug.LogError("PlayerInput component not found on GameObject!");
+            return;
+        }
+        moveAction = playerInput.actions.FindAction("Move", true);
+        lookAction = playerInput.actions.FindAction("Look", true);
     }
-    
+
     private void Update()
     {
+        // Read input from InputActions
+        if (moveAction != null && moveAction.enabled)
+            moveInput = moveAction.ReadValue<Vector2>();
+        else
+            moveInput = Vector2.zero;
+        if (lookAction != null && lookAction.enabled)
+            lookInput = lookAction.ReadValue<Vector2>();
+        else
+            lookInput = Vector2.zero;
         HandleMovement();
         HandleLook();
     }
-    
+
     private void HandleMovement()
     {
-        float moveZ = Keyboard.current.aKey.isPressed ? -1 : Keyboard.current.dKey.isPressed ? 1 : 0;
-        float moveX = Keyboard.current.sKey.isPressed ? -1 : Keyboard.current.wKey.isPressed ? 1 : 0;
-
+        // Debug.Log(moveInput);
+        // Debug.Log(lookInput);
+        
+        // Use moveInput from Input System
         Vector3 forward = transform.forward;
         Vector3 right = transform.right;
-
-        Vector3 desiredMove = (forward * moveX + right * moveZ).normalized;
-
+        Vector3 desiredMove = (forward * moveInput.y + right * moveInput.x).normalized;
         if (characterController.isGrounded)
         {
             verticalVelocity = -0.5f;
@@ -46,23 +71,21 @@ public class PlayerController : MonoBehaviour
         {
             verticalVelocity += Gravity * Time.deltaTime;
         }
-
         moveDirection = desiredMove * WalkingSpeed;
         moveDirection.y = verticalVelocity;
-
         characterController.Move(moveDirection * Time.deltaTime);
     }
-    
+
     private void HandleLook()
     {
-        float mouseX = Mouse.current.delta.x.value * LookSensitivity * Time.deltaTime;
-        float mouseY = Mouse.current.delta.y.value * LookSensitivity * Time.deltaTime;
-        
-        transform.Rotate(Vector3.up * mouseX);
-        
-        rotationX += -mouseY;
+        // Horizontal rotation (yaw) for player
+        float yaw = lookInput.x * LookSensitivity * Time.smoothDeltaTime;
+        transform.Rotate(Vector3.up * yaw);
+
+        // Vertical rotation (pitch) for camera
+        rotationX -= lookInput.y * LookSensitivity * Time.smoothDeltaTime;
         rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-        
-        Camera.main.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+        if (playerCamera != null)
+            playerCamera.transform.localEulerAngles = new Vector3(rotationX, 0, 0);
     }
 }
