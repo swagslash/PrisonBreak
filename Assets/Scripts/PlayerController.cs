@@ -35,13 +35,8 @@ public class PlayerController : MonoBehaviour
             Debug.LogError("PlayerInput component not found on GameObject!");
             return;
         }
-        // Use action map and actions from PlayerInput
         moveAction = playerInput.actions.FindAction("Move", true);
         lookAction = playerInput.actions.FindAction("Look", true);
-        if (moveAction == null || lookAction == null)
-        {
-            Debug.LogError("Move or Look action not found in PlayerInput.actions!");
-        }
     }
 
     private void Update()
@@ -84,11 +79,11 @@ public class PlayerController : MonoBehaviour
     private void HandleLook()
     {
         // Horizontal rotation (yaw) for player
-        float yaw = lookInput.x * LookSensitivity;
+        float yaw = lookInput.x * LookSensitivity * Time.smoothDeltaTime;
         transform.Rotate(Vector3.up * yaw);
 
         // Vertical rotation (pitch) for camera
-        rotationX -= lookInput.y * LookSensitivity;
+        rotationX -= lookInput.y * LookSensitivity * Time.smoothDeltaTime;
         rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
         if (playerCamera != null)
             playerCamera.transform.localEulerAngles = new Vector3(rotationX, 0, 0);
