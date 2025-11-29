@@ -13,6 +13,8 @@ public class InteractionController: MonoBehaviour
     [SerializeField] float interactionDistance = 3f;
 
     private IInteractable currentInteractable;
+    
+    private InputAction interactAction;
 
     public void Start()
     {
@@ -20,6 +22,7 @@ public class InteractionController: MonoBehaviour
         {
             playerCamera = Camera.main;
         }
+        interactAction = InputSystem.actions.FindAction("Player/Interact");
     }
     
     public void Interact()
@@ -68,9 +71,9 @@ public class InteractionController: MonoBehaviour
     {
         // add null checks for Keyboard.current and Gamepad.current
         
-        var eKey = Keyboard.current?.eKey.wasPressedThisFrame ?? false;
-        var yButton = Gamepad.current?.yButton.wasPressedThisFrame ?? false;
-        if (eKey || yButton)
+        // var eKey = Keyboard.current?.eKey.wasPressedThisFrame ?? false;
+        // var yButton = Gamepad.current?.yButton.wasPressedThisFrame ?? false;
+        if (interactAction.WasPressedThisFrame())
         {
             Debug.Log("Interact key was pressed this frame");
             Interact();
