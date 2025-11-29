@@ -1,4 +1,10 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Unity.Entities;
+using Unity.Mathematics;
+using Unity.Transforms;
+
+public struct DoorChildTag : IComponentData {}
 
 namespace DefaultNamespace
 {
