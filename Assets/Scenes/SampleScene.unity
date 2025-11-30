@@ -308,6 +308,67 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6281424698479989189, guid: 9fe6678bf299aa347a318473794cc811, type: 3}
+--- !u!1001 &162384750
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4119690940297488679, guid: ecfa892818939e345aa088afd6d44738, type: 3}
+      propertyPath: m_Name
+      value: finish
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413172318654147151, guid: ecfa892818939e345aa088afd6d44738, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413172318654147151, guid: ecfa892818939e345aa088afd6d44738, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413172318654147151, guid: ecfa892818939e345aa088afd6d44738, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413172318654147151, guid: ecfa892818939e345aa088afd6d44738, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413172318654147151, guid: ecfa892818939e345aa088afd6d44738, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413172318654147151, guid: ecfa892818939e345aa088afd6d44738, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413172318654147151, guid: ecfa892818939e345aa088afd6d44738, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413172318654147151, guid: ecfa892818939e345aa088afd6d44738, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413172318654147151, guid: ecfa892818939e345aa088afd6d44738, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413172318654147151, guid: ecfa892818939e345aa088afd6d44738, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103172552834163913, guid: ecfa892818939e345aa088afd6d44738, type: 3}
+      propertyPath: gameOverSuccessText
+      value: 
+      objectReference: {fileID: 1879917835}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ecfa892818939e345aa088afd6d44738, type: 3}
 --- !u!64 &163294770
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -569,6 +630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.CountdownTimer
   duration: 600
+  gameOverFailedText: {fileID: 360984163}
 --- !u!1 &247593585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1111,6 +1173,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -7935988318445681413, guid: 21faff72d77314943a3044b779e273a9, type: 3}
   m_PrefabInstance: {fileID: 1876007796}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &360984163 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1001396560204892366, guid: 6f48f5b7d7e3e8f468b048e4e2d22212, type: 3}
+  m_PrefabInstance: {fileID: 5437722188595754860}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!64 &378585319
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6243,6 +6316,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0e44529652f4ba5a3382f5d8a12a097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.Inventory
+--- !u!114 &1879917835 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5594140235324918222, guid: 6f48f5b7d7e3e8f468b048e4e2d22212, type: 3}
+  m_PrefabInstance: {fileID: 5437722188595754860}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1889205855
 GameObject:
   m_ObjectHideFlags: 0
@@ -21402,6 +21486,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1889205856}
     m_Modifications:
+    - target: {fileID: 550829383251457559, guid: 70ee21550121d544795767010097db28, type: 3}
+      propertyPath: gameOverFailedText
+      value: 
+      objectReference: {fileID: 360984163}
     - target: {fileID: 1971487566699744575, guid: 70ee21550121d544795767010097db28, type: 3}
       propertyPath: m_Name
       value: LockedSlidingDoor
@@ -24430,3 +24518,4 @@ SceneRoots:
   - {fileID: 1876007796}
   - {fileID: 1174241059}
   - {fileID: 1489297747}
+  - {fileID: 162384750}
