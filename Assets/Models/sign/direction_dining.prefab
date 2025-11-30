@@ -12,6 +12,18 @@ PrefabInstance:
       propertyPath: m_text
       value: Dining
       objectReference: {fileID: 0}
+    - target: {fileID: 1429614760657469180, guid: 23bad4bdc3019d5428d07470d9ec8c5f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429614760657469180, guid: 23bad4bdc3019d5428d07470d9ec8c5f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429614760657469180, guid: 23bad4bdc3019d5428d07470d9ec8c5f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.08
+      objectReference: {fileID: 0}
     - target: {fileID: 4119066040991449203, guid: 23bad4bdc3019d5428d07470d9ec8c5f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -55,6 +67,22 @@ PrefabInstance:
     - target: {fileID: 4174472862974815088, guid: 23bad4bdc3019d5428d07470d9ec8c5f, type: 3}
       propertyPath: m_Name
       value: direction_dining
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389190079729773352, guid: 23bad4bdc3019d5428d07470d9ec8c5f, type: 3}
+      propertyPath: m_text
+      value: "\u2192"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389190079729773352, guid: 23bad4bdc3019d5428d07470d9ec8c5f, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296474552367930696, guid: 23bad4bdc3019d5428d07470d9ec8c5f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296474552367930696, guid: 23bad4bdc3019d5428d07470d9ec8c5f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
