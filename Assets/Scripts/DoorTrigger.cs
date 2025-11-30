@@ -46,6 +46,7 @@ namespace DefaultNamespace
                     3f,
                     child.transform.position.z);
             }
+            this.gameObject.SetActive(false);
         }
     }
 }
