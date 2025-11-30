@@ -50,7 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2088850381562969048, guid: 87574383baef5407bb64e99df70517b7, type: 3}
       propertyPath: m_Name
-      value: LockerKey
+      value: LockerKey69
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266831022427348617, guid: 87574383baef5407bb64e99df70517b7, type: 3}
+      propertyPath: ItemName
+      value: Key 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

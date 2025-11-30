@@ -53,7 +53,7 @@ public class InteractionController: MonoBehaviour
             if (interactable != null)
             {
                 currentInteractable = interactable;
-                interactionText.text = interactable.InteractionMessage;
+                interactionText.text = interactable.InteractionMessage; 
                 interactionText.gameObject.SetActive(true);
                 return;
             }

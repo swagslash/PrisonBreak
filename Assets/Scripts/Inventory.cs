@@ -63,5 +63,10 @@ namespace DefaultNamespace
         {
             return new List<TakableItem>(items);
         }
+        
+        public bool ContainsAnySmallKey()
+        {
+            return items.Exists(x => x.ItemName.Contains("Small Key"));
+        }
     }
 }
