@@ -5364,7 +5364,7 @@ GameObject:
   - component: {fileID: 1808871113}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15251,6 +15251,10 @@ PrefabInstance:
     - target: {fileID: 823882472138173787, guid: 6f48f5b7d7e3e8f468b048e4e2d22212, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3481705021734238292, guid: 6f48f5b7d7e3e8f468b048e4e2d22212, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3901187458786125292, guid: 6f48f5b7d7e3e8f468b048e4e2d22212, type: 3}
       propertyPath: m_Pivot.x
