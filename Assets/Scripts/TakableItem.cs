@@ -42,5 +42,10 @@ namespace DefaultNamespace
                 gameObject.SetActive(false);
             }
         }
+
+        public override string ToString()
+        {
+            return ItemName + "(shown as '" + DisplayName + "')";
+        }
     }
 }

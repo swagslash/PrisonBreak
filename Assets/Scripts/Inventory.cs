@@ -68,5 +68,10 @@ namespace DefaultNamespace
         {
             return items.Exists(x => x.ItemName.Contains("Small Key"));
         }
+
+        public override string ToString()
+        {
+            return string.Join(", ", items);
+        }
     }
 }

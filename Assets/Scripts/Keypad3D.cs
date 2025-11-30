@@ -16,6 +16,9 @@ public class Keypad3D : MonoBehaviour
     [Header("Optional Display (TextMeshPro)")]
     public TextMeshPro display;
     public TextMeshPro attempts;
+    
+    public TextMeshProUGUI gameOverFailedText;
+    
     private string currentInput = "";
     
     private bool codeEntered = false;
@@ -72,6 +75,9 @@ public class Keypad3D : MonoBehaviour
             attempts.text = "...";
             numberOfAttempts++;
             locked = true;
+            
+            Invoke(nameof(RestartGame), 3f);
+            gameOverFailedText?.gameObject.SetActive(true);
         }
         else 
         {
@@ -103,6 +109,12 @@ public class Keypad3D : MonoBehaviour
              display.fontSize = 5;
              display.color = Color.white;
         }
-           
+    }
+    
+    void RestartGame()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(
+            UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
+        );
     }
 }
