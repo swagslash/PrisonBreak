@@ -1772,6 +1772,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4312010756176010892, guid: 9fe6678bf299aa347a318473794cc811, type: 3}
+--- !u!114 &800365065 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5594140235324918222, guid: 6f48f5b7d7e3e8f468b048e4e2d22212, type: 3}
+  m_PrefabInstance: {fileID: 5437722188595754860}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!64 &802572379
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2130,6 +2141,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &964742131 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1001396560204892366, guid: 6f48f5b7d7e3e8f468b048e4e2d22212, type: 3}
+  m_PrefabInstance: {fileID: 5437722188595754860}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!64 &996356724
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2240,6 +2262,73 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4312010756176010892, guid: 9fe6678bf299aa347a318473794cc811, type: 3}
+--- !u!1 &1078743569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1078743570}
+  - component: {fileID: 1078743572}
+  - component: {fileID: 1078743571}
+  m_Layer: 0
+  m_Name: goal collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1078743570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078743569}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 40, y: 0, z: 23}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2074873851}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1078743571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078743569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33241c3941e314c44b73c15af83a2e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  gameOverSuccessText: {fileID: 800365065}
+--- !u!65 &1078743572
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078743569}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 8, y: 3, z: 2.037407}
+  m_Center: {x: 2, y: 1, z: -0.51870346}
 --- !u!64 &1082186951
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3573,7 +3662,7 @@ GameObject:
   - component: {fileID: 1808871113}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3587,7 +3676,7 @@ Transform:
   m_GameObject: {fileID: 1808871108}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.97, y: 1.34, z: 30.38}
+  m_LocalPosition: {x: 45.23, y: 1.34, z: 9.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4373,6 +4462,38 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!1 &2074873850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2074873851}
+  m_Layer: 0
+  m_Name: finish
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2074873851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074873850}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1078743570}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &98785208063043881
 GameObject:
   m_ObjectHideFlags: 0
@@ -29936,6 +30057,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1889205856}
     m_Modifications:
+    - target: {fileID: 550829383251457559, guid: 70ee21550121d544795767010097db28, type: 3}
+      propertyPath: gameOverFailedText
+      value: 
+      objectReference: {fileID: 964742131}
     - target: {fileID: 1971487566699744575, guid: 70ee21550121d544795767010097db28, type: 3}
       propertyPath: m_Name
       value: LockedSlidingDoor
@@ -30009,6 +30134,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 7996321414700050307, guid: 70ee21550121d544795767010097db28, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 3723639438091791794, guid: 70ee21550121d544795767010097db28, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 6996157860044284553, guid: 70ee21550121d544795767010097db28, type: 3}
@@ -35241,3 +35369,4 @@ SceneRoots:
   - {fileID: 1876007796}
   - {fileID: 5190530881272868447}
   - {fileID: 1893118959948522563}
+  - {fileID: 2074873851}
