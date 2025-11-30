@@ -7,15 +7,16 @@ namespace DefaultNamespace
     /// <summary>
     /// A simple Timer class to handle timing functionality.
     /// </summary>
-    public class CountdownTimer: MonoBehaviour
+    public class CountdownTimer : MonoBehaviour
     {
         public float duration;
-        
+
         private float timeRemaining;
         private bool isRunning;
         public bool IsFinished => !isRunning && timeRemaining <= 0f;
-        
+
         TextMeshProUGUI timerText;
+        public TextMeshProUGUI gameOverFailedText;
 
         private void Start()
         {
@@ -36,10 +37,11 @@ namespace DefaultNamespace
                     isRunning = false;
                     OnTimerFinished();
                 }
+
                 UpdateText();
             }
         }
-        
+
         void UpdateText()
         {
             if (timerText != null)
@@ -47,20 +49,27 @@ namespace DefaultNamespace
                 timerText.text = FormatTime(timeRemaining);
             }
         }
-        
+
         string FormatTime(float time)
         {
             TimeSpan timeSpan = TimeSpan.FromSeconds(time);
             return string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
         }
-        
+
         void OnTimerFinished()
         {
             Debug.Log("Timer finished!");
             // Additional logic when the timer finishes can be added here.
             // restart scene 
+            Invoke(nameof(RestartGame), 3f);
+            gameOverFailedText?.gameObject.SetActive(true);
+        }
+
+        void RestartGame()
+        {
             UnityEngine.SceneManagement.SceneManager.LoadScene(
-                 UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+                UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
+            );
         }
     }
 }

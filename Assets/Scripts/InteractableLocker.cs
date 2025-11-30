@@ -22,8 +22,16 @@ namespace DefaultNamespace
         {
             if (inventory.ContainsItemWithName(requiredItemName) && !isTaken)
             {
-                GiveLockerContent();
-                InteractionMessage = "You got " + lockerContentItemName + " from the locker.";
+                GiveLockerContent(inventory);
+                if (string.IsNullOrEmpty(lockerContentItemName))
+                {
+                    InteractionMessage = "The locker is empty.";
+                }
+                else
+                {
+                    InteractionMessage = $"A {lockerContentItemName} dropped out of the locker.";
+                }
+
                 isTaken = true;
             }
             else
@@ -33,10 +41,9 @@ namespace DefaultNamespace
                 {
                     InteractionMessage = "The small key you have doesn't fit this locker.";
                 }
-                else if (isTaken || string.IsNullOrEmpty(lockerContentItemName))
+                else if (isTaken)
                 {
-                    InteractionMessage = "The locker is empty.";
-                    isTaken = true;
+                    InteractionMessage = "You have already taken the contents of this locker.";
                 }
                 else
                 {
@@ -44,7 +51,7 @@ namespace DefaultNamespace
                 }
                 
                 // timer to reset the message
-                // Invoke("ResetInteractionMessage", 3f);
+                Invoke("ResetInteractionMessage", 5f);
             }
 
         }
@@ -54,13 +61,17 @@ namespace DefaultNamespace
             InteractionMessage = "Press 'E' to unlock";
         }
 
-        private void GiveLockerContent()
+        private void GiveLockerContent(Inventory inventory)
         {
             // Logic to open the door
-            Debug.Log("The door has been opened!");
-            // put some feedback to the player that they need a key
-            // into the interaction message for a few seconds?
-            InteractionMessage = "You got ${lockerContentItemName} from the locker.";
+            Debug.Log("The locker has been opened!");
+
+            // activate all children
+            foreach (Transform child in transform)
+            {
+                child.gameObject.SetActive(true);
+            }
+            
             // timer to reset the message
             Invoke("ResetInteractionMessage", 2f);
             
