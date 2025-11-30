@@ -21491,6 +21491,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1889205856}
     m_Modifications:
     - target: {fileID: 550829383251457559, guid: 70ee21550121d544795767010097db28, type: 3}
+      propertyPath: correctCode
+      value: 4324
+      objectReference: {fileID: 0}
+    - target: {fileID: 550829383251457559, guid: 70ee21550121d544795767010097db28, type: 3}
       propertyPath: gameOverFailedText
       value: 
       objectReference: {fileID: 360984163}
