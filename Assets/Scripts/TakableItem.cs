@@ -7,18 +7,40 @@ namespace DefaultNamespace
         [SerializeField]
         public string ItemName = "Item";
         
+        [SerializeField]
+        public string displayNameOverride = null;
+        
+        // Optional display name for UI, defaults to ItemName if not set
+        private string DisplayName => string.IsNullOrEmpty(displayNameOverride) ? ItemName : displayNameOverride;
+        
+        public bool doesNotDisappearOnTake = false;
+        
+        public string interactionMessageOverride = null;
+        
         // prefab that can be instantiated on drop
         public GameObject ItemPrefab;
         
         private bool isTaken = false;
-        public string InteractionMessage => $"Press 'E' to pick up {ItemName}";
+        
+        public string InteractionMessage =>
+            !string.IsNullOrEmpty(interactionMessageOverride)
+                ? interactionMessageOverride
+                : $"Press 'E' to take {DisplayName}";
 
+        public string GetMessage()
+        {
+            return string.IsNullOrEmpty(interactionMessageOverride) ? interactionMessageOverride : $"Press 'E' to take {DisplayName}";
+        }
+        
         public void Interact(Inventory inventory)
         {
             inventory.AddItem(this);
             Debug.Log($"{ItemName} has been added to your inventory.");
             isTaken = true;
-            gameObject.SetActive(false);
+            if (!doesNotDisappearOnTake)
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 }

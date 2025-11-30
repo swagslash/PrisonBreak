@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private float verticalVelocity;
 
     private float rotationX = 0;
-    private float lookXLimit = 45.0f;
+    private float lookXLimit = 85.0f;
 
     private PlayerInput playerInput;
     private InputAction moveAction;
@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
         
         // Use moveInput from Input System
         Vector3 forward = transform.forward;
-        Vector3 right = transform.right;
+        Vector3 right = transform.right * 0.6f;
         Vector3 desiredMove = (forward * moveInput.y + right * moveInput.x).normalized;
         if (characterController.isGrounded)
         {
