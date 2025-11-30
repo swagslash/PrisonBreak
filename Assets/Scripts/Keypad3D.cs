@@ -22,6 +22,8 @@ public class Keypad3D : MonoBehaviour
     
     private int numberOfAttempts = 0;
 
+    private bool locked = false;    
+
     private void Awake()
     {
         Instance = this;
@@ -29,6 +31,10 @@ public class Keypad3D : MonoBehaviour
 
     public void PressKey(string digit)
     {
+        if (locked)
+        {
+            return;
+        }
         if (codeEntered)
         {
             ResetKeypad();
@@ -63,7 +69,9 @@ public class Keypad3D : MonoBehaviour
             display.color = Color.red;
             display.fontSize = 4;
             display.text = "Locked";
+            attempts.text = "...";
             numberOfAttempts++;
+            locked = true;
         }
         else 
         {
