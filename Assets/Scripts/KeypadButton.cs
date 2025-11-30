@@ -5,9 +5,9 @@ using UnityEngine.InputSystem;
 public class KeypadButton : MonoBehaviour, IInteractable
 {
     
-    public string InteractionMessage { get; } = "Press 'E' to open the door";
     [Tooltip("Digit this button represents (1–9)")]
     public string digit = "1";
+    public string InteractionMessage => $"Press 'E' to type {digit}";
 
     // Called when object is clicked (works with mouse / raycast and Collider)
     private void OnMouseDown()
