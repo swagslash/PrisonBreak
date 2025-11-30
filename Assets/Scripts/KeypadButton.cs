@@ -20,15 +20,12 @@ public class KeypadButton : MonoBehaviour, IInteractable
         }
     }
     
-    public void Interact()
+    public void Interact(Inventory inventory)
     {
-
         Debug.Log(digit);
         if (Keypad3D.Instance != null)
-         {
-             Keypad3D.Instance.PressKey(digit);
-         }
-        
-        
+        {
+            Keypad3D.Instance.PressKey(digit);
+        }
     }
 }
