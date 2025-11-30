@@ -12,6 +12,8 @@ public class InteractionController: MonoBehaviour
 
     [SerializeField] float interactionDistance = 3f;
 
+    Inventory playerInventory;
+    
     private IInteractable currentInteractable;
     
     private InputAction interactAction;
@@ -22,12 +24,16 @@ public class InteractionController: MonoBehaviour
         {
             playerCamera = Camera.main;
         }
+        if (playerInventory == null)
+        {
+            playerInventory = GetComponent<Inventory>();
+        }
         interactAction = InputSystem.actions.FindAction("Player/Interact");
     }
     
     public void Interact()
     {
-        currentInteractable?.Interact();
+        currentInteractable?.Interact(inventory: playerInventory);
     }
 
     private void Update()
