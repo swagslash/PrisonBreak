@@ -5,6 +5,8 @@ namespace DefaultNamespace
 {
     public class DoorTrigger : MonoBehaviour, IInteractable
     {
+        public string requiredItemName = "Key";
+        
         public string InteractionMessage { get; private set; }
 
         public void Start()
@@ -14,7 +16,7 @@ namespace DefaultNamespace
 
         public void Interact(Inventory inventory)
         {
-            if (inventory.ContainsItemWithName("Key"))
+            if (inventory.ContainsItemWithName(requiredItemName))
             {
                 OpenDoor();
             }
@@ -23,6 +25,7 @@ namespace DefaultNamespace
                 // put some feedback to the player that they need a key
                 // into the interaction message for a few seconds?
                 InteractionMessage = "You need a key to open this door.";
+                Debug.Log(inventory);
                 // timer to reset the message
                 Invoke("ResetInteractionMessage", 2f);
             }
